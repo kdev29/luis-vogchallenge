@@ -1,0 +1,11 @@
+version: "3.7"
+services:
+    employees-api:
+        image: "luis-vogchallenge"
+        ports:
+          - "3000:80"
+          - "3001:443"
+    redis-server:
+        image: "redis"
+        ports:
+          - "6379:6379"
