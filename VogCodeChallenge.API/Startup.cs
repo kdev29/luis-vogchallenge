@@ -27,7 +27,7 @@ namespace VogCodeChallenge.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddTransient<IEmployeeManagementService, EmployeeManagementService>();
+            services.AddTransient<IEmployeeManagementService, EmployeeManagementEFService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

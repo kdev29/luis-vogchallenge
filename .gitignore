@@ -8,3 +8,5 @@
 /VogCodeChallenge.API/VogCodeChallenge.API.csproj.user
 /VogCodeChallenge.Domain/obj
 /VogCodeChallenge.Domain/bin/Debug/netstandard2.0
+/VogCodeChallenge.DataAccess.EF/bin/Debug/netstandard2.0
+/VogCodeChallenge.DataAccess.EF/obj

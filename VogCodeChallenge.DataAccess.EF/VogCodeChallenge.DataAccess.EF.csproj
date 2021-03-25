@@ -4,8 +4,4 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\VogCodeChallenge.DataAccess.EF\VogCodeChallenge.DataAccess.EF.csproj" />
-  </ItemGroup>
-
 </Project>
