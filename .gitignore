@@ -10,3 +10,5 @@
 /VogCodeChallenge.Domain/bin/Debug/netstandard2.0
 /VogCodeChallenge.DataAccess.EF/bin/Debug/netstandard2.0
 /VogCodeChallenge.DataAccess.EF/obj
+/VogCodeChallenge.Console/obj
+/VogCodeChallenge.Console/bin/Debug/netcoreapp3.1
