@@ -8,12 +8,53 @@ namespace VogCodeChallenge.Console.Main
     {
         static void Main(string[] args)
         {
-            System.Console.WriteLine("Hello World!");
+            System.Console.WriteLine("----ITERATIONS EXCERSICE---");
 
             QuestionClass.IterationMethod1();
             System.Console.WriteLine("------------------");
             QuestionClass.IterationMethod2();
+
+            System.Console.WriteLine("-------TESTModule calls-----------");
+            System.Console.WriteLine(TESTModule<int>(3));
+            System.Console.WriteLine(TESTModule<int>(5));
+            System.Console.WriteLine(TESTModule<string>("test"));
+            System.Console.WriteLine(TESTModule<TestClass>(new TestClass()));
         }
+
+        static T TESTModule<T>(T argument)
+        {            
+            switch(Type.GetTypeCode(argument.GetType()))
+            {
+                case TypeCode.Int32:
+                    var actualValue = Convert.ToInt32(argument);
+
+                    if (actualValue < 0)
+                        throw new ApplicationException("Provided value cannot be below zero");
+
+                    if (actualValue > 0 && actualValue <= 4)
+                        return (T)Convert.ChangeType(actualValue, typeof(T));
+
+                    return (T)Convert.ChangeType(actualValue * 3, typeof(T));
+
+                case TypeCode.Double:
+                    var doubleValue = Convert.ToDouble(argument);
+                    if (doubleValue == 1.0f || doubleValue == 2.0f)                    
+                        return (T)Convert.ChangeType(3.0f, typeof(T));
+
+                    return argument;
+
+                case TypeCode.String:
+                    return (T)Convert.ChangeType(argument.ToString().ToUpper(), typeof(T));
+                    
+                default:
+                    return argument;
+            }
+        }
+    }
+
+    public class TestClass
+    {
+
     }
 
     public static class QuestionClass
