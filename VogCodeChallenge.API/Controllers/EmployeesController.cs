@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using VogCodeChallenge.API.Tasks;
+using VogCodeChallenge.Domain.EmployeeManagement;
+using VogCodeChallenge.Domain.Services;
 
 namespace VogCodeChallenge.API.Controllers
 {
@@ -10,10 +10,24 @@ namespace VogCodeChallenge.API.Controllers
     [Route("api/[controller]")]
     public class EmployeesController : Controller
     {
-        [HttpGet]        
-        public List<string> GetAll()
+        private readonly EmployeeApiTask employeeApiTask;
+
+        public EmployeesController(IEmployeeManagementService _employeeService)
         {
-            return new List<string>() { "Hello", "World" };
+            employeeApiTask = new EmployeeApiTask(_employeeService);
+        }
+
+        [HttpGet]
+        public IEnumerable<Employee> GetAll()
+        {
+            return employeeApiTask.GetAllEmployees();
+        }
+
+        [HttpGet]
+        [Route("department/{departmentId}")]
+        public IEnumerable<Employee> GetByDepartment(string departmentId)
+        {
+            return employeeApiTask.GetEmployeesByDepartment(departmentId);
         }
     }
 }

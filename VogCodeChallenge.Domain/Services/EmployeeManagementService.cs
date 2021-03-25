@@ -18,10 +18,10 @@ namespace VogCodeChallenge.Domain.Services
 
         private IEnumerable<Employee> GetTestData()
         {
-            yield return new Employee("Luis", "Olvera", "Software Engineer", new Address() { FullAddress = "Mexico City" });
-            yield return new Employee("Elon", "Musk", "Founder", new Address() { FullAddress = "California" });
-            yield return new Employee("Jeff", "Bezos", "CEO", new Address() { FullAddress = "New York" });
-            yield return new Employee("Satya", "Nadella", "CIO", new Address() { FullAddress = "Washington" });
+            yield return new Employee("Luis", "Olvera", "Software Engineer", new Address() { FullAddress = "Mexico City" }, "IT");
+            yield return new Employee("Elon", "Musk", "Founder", new Address() { FullAddress = "California" }, "Sales");
+            yield return new Employee("Jeff", "Bezos", "CEO", new Address() { FullAddress = "New York" }, "Finance");
+            yield return new Employee("Satya", "Nadella", "CIO", new Address() { FullAddress = "Washington" }, "Finance");
         }
     }
 }
