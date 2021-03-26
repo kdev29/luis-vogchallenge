@@ -12,3 +12,7 @@
 /VogCodeChallenge.DataAccess.EF/obj
 /VogCodeChallenge.Console/obj
 /VogCodeChallenge.Console/bin/Debug/netcoreapp3.1
+/VogCodeChallenge.Lambda/bin
+/VogCodeChallenge.Lambda/obj
+/VogCodeChallenge.Lambda.Tests/bin/Debug/netcoreapp3.1
+/VogCodeChallenge.Lambda.Tests/obj
